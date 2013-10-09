@@ -1,5 +1,5 @@
-import users
-import listings
+import user
+import listing
 import shop
 
 user_filename = "users.json"
@@ -19,7 +19,7 @@ user_file = open(user_filename, 'r')
 all_users = []
 
 for line in user_file:
-    new_user = users.fromJson(line)
+    new_user = user.fromJson(line)
     all_users.append(new_user)
 user_file.close()
 
@@ -27,7 +27,7 @@ listing_file = open(listings_filename, 'r')
 all_listings = []
 
 for line in listing_file:
-    new_listing = listings.fromJson(line)
+    new_listing = listing.fromJson(line)
     all_listings.append(new_listing)
 
 listing_file.close()
