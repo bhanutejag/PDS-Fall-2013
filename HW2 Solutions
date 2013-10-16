@@ -1,0 +1,238 @@
+2. wc -l survey_multiple_choice.csv
+
+3. 
+import matplotlib.pyplot as plt
+
+d1 = {"I don't even understand the question": 0,
+"I have no experience working in a terminal": 0,
+"I have issued a few commands in a terminal based on given instructions": 0,
+"I have written simple terminal commands or done some system work on the terminal": 0,
+"I have written complex commands done or have done deep system work": 0}
+
+d2 = {"I have never directly accessed a database": 0, 
+"I have issued simple queries to a relational database based on given instructions": 0,
+"I can write simple queries and issue them to a database": 0,
+"I can write very complex queries when needed": 0,
+"I am a database hacker": 0}
+
+d3 = {"I have never programmed before.": 0,
+"I have written simple programs based on instructions or a tutorial": 0,
+"I can write simple programs to accomplish tasks I encounter": 0,
+"I can write complex programs am familiar with programming design patterns software testing system design and algorithms.": 0,
+"I am a hacker or have  senior-level programming experience": 0}
+
+f = open('survey_multiple_choice.csv', 'r')
+for line in f:
+  cols = line.split(',')
+  cols[2] = cols[2].strip()
+  d1[cols[2]] = d1[cols[2]] + 1
+  cols[3] = cols[3].strip()
+  d2[cols[3]] = d2[cols[3]] + 1
+  cols[4] = cols[4].strip()
+  d3[cols[4]] = d3[cols[4]] + 1
+
+keys = range(5)
+
+print "Unix"
+print d1
+print "\nDatabase"
+print d2
+print "\nProgramming"
+print d3
+
+
+4. 
+import matplotlib.pyplot as plt
+
+d1 = {"I don't even understand the question": 0,
+"I have no experience working in a terminal": 0,
+"I have issued a few commands in a terminal based on given instructions": 0,
+"I have written simple terminal commands or done some system work on the terminal": 0,
+"I have written complex commands done or have done deep system work": 0}
+
+d2 = {"I have never directly accessed a database": 0, 
+"I have issued simple queries to a relational database based on given instructions": 0,
+"I can write simple queries and issue them to a database": 0,
+"I can write very complex queries when needed": 0,
+"I am a database hacker": 0}
+
+d3 = {"I have never programmed before.": 0,
+"I have written simple programs based on instructions or a tutorial": 0,
+"I can write simple programs to accomplish tasks I encounter": 0,
+"I can write complex programs am familiar with programming design patterns software testing system design and algorithms.": 0,
+"I am a hacker or have  senior-level programming experience": 0}
+
+f = open('survey_multiple_choice.csv', 'r')
+for line in f:
+  cols = line.split(',')
+  cols[2] = cols[2].strip()
+  d1[cols[2]] = d1[cols[2]] + 1
+  cols[3] = cols[3].strip()
+  d2[cols[3]] = d2[cols[3]] + 1
+  cols[4] = cols[4].strip()
+  d3[cols[4]] = d3[cols[4]] + 1
+
+i = 1
+unix_values = d1.values()
+dbms_values = d2.values()
+prog_values = d3.values()
+total1 = 0
+total2 = 0
+total3 = 0
+for key in d1.keys():
+  total1 = total1 + unix_values[i-1] * i
+  total2 = total2 + dbms_values[i-1] * i
+  total3 = total3 + prog_values[i-1] * i
+  i = i+1
+
+maxim = max(total1,total2)
+maxim = max(maxim,total3)
+
+if (maxim == total1):
+  print "Unix has the highest overall skill level"
+elif (maxim == total2):
+  print "Database has the highest overall skill level"
+else:
+  print "Programming has the highest overall skill level"
+
+minim = min(total1,total2)
+minim = min(minim,total3)
+
+if (minim == total1):
+  print "Unix has the lowest overall skill level"
+elif (minim == total2):
+  print "Database has the lowest overall skill level"
+else:
+  print "Programming has the lowest overall skill level"
+  
+  
+5.
+f = open('survey_multiple_choice.csv', 'r')
+line_number = 0
+for line in f:
+  line_number = line_number + 1
+  print "Line Number: " + str(line_number)
+  cols = line.split(',')
+  col_num = 0
+  for col in cols:
+    col_num = col_num + 1
+    print "Column Number: " + str(col_num)
+    print col
+
+
+6.
+import matplotlib.pyplot as plt
+
+d1 = {"I don't even understand the question": 0,
+"I have no experience working in a terminal": 0,
+"I have issued a few commands in a terminal based on given instructions": 0,
+"I have written simple terminal commands or done some system work on the terminal": 0,
+"I have written complex commands done or have done deep system work": 0}
+
+d2 = {"I have never directly accessed a database": 0, 
+"I have issued simple queries to a relational database based on given instructions": 0,
+"I can write simple queries and issue them to a database": 0,
+"I can write very complex queries when needed": 0,
+"I am a database hacker": 0}
+
+d3 = {"I have never programmed before.": 0,
+"I have written simple programs based on instructions or a tutorial": 0,
+"I can write simple programs to accomplish tasks I encounter": 0,
+"I can write complex programs am familiar with programming design patterns software testing system design and algorithms.": 0,
+"I am a hacker or have  senior-level programming experience": 0}
+
+f = open('survey_multiple_choice.csv', 'r')
+for line in f:
+  cols = line.split(',')
+  cols[2] = cols[2].strip()
+  d1[cols[2]] = d1[cols[2]] + 1
+  cols[3] = cols[3].strip()
+  d2[cols[3]] = d2[cols[3]] + 1
+  cols[4] = cols[4].strip()
+  d3[cols[4]] = d3[cols[4]] + 1
+
+keys = range(5)
+plt.plot(keys,d1.values(),color='r')
+plt.show()
+plt.plot(keys,d2.values(),color='g')
+plt.show()
+plt.plot(keys,d3.values(),color='b')
+plt.show()
+
+
+7.
+import matplotlib.pyplot as plt
+
+d1 = {"I don't even understand the question": 0,
+"I have no experience working in a terminal": 0,
+"I have issued a few commands in a terminal based on given instructions": 0,
+"I have written simple terminal commands or done some system work on the terminal": 0,
+"I have written complex commands done or have done deep system work": 0}
+
+d2 = {"I have never directly accessed a database": 0, 
+"I have issued simple queries to a relational database based on given instructions": 0,
+"I can write simple queries and issue them to a database": 0,
+"I can write very complex queries when needed": 0,
+"I am a database hacker": 0}
+
+d3 = {"I have never programmed before.": 0,
+"I have written simple programs based on instructions or a tutorial": 0,
+"I can write simple programs to accomplish tasks I encounter": 0,
+"I can write complex programs am familiar with programming design patterns software testing system design and algorithms.": 0,
+"I am a hacker or have  senior-level programming experience": 0}
+
+f = open('survey_multiple_choice.csv', 'r')
+for line in f:
+  cols = line.split(',')
+  cols[2] = cols[2].strip()
+  d1[cols[2]] = d1[cols[2]] + 1
+  cols[3] = cols[3].strip()
+  d2[cols[3]] = d2[cols[3]] + 1
+  cols[4] = cols[4].strip()
+  d3[cols[4]] = d3[cols[4]] + 1
+
+keys = range(5)
+plt.plot(keys,d1.values(),color='r')
+plt.plot(keys,d2.values(),color='g')
+plt.plot(keys,d3.values(),color='b')
+plt.show()
+
+
+8.
+import matplotlib.pyplot as plt
+
+d1 = {"I don't even understand the question": 0,
+"I have no experience working in a terminal": 0,
+"I have issued a few commands in a terminal based on given instructions": 0,
+"I have written simple terminal commands or done some system work on the terminal": 0,
+"I have written complex commands done or have done deep system work": 0}
+
+d2 = {"I have never directly accessed a database": 0, 
+"I have issued simple queries to a relational database based on given instructions": 0,
+"I can write simple queries and issue them to a database": 0,
+"I can write very complex queries when needed": 0,
+"I am a database hacker": 0}
+
+d3 = {"I have never programmed before.": 0,
+"I have written simple programs based on instructions or a tutorial": 0,
+"I can write simple programs to accomplish tasks I encounter": 0,
+"I can write complex programs am familiar with programming design patterns software testing system design and algorithms.": 0,
+"I am a hacker or have  senior-level programming experience": 0}
+
+f = open('survey_multiple_choice.csv', 'r')
+for line in f:
+  cols = line.split(',')
+  cols[2] = cols[2].strip()
+  d1[cols[2]] = d1[cols[2]] + 1
+  cols[3] = cols[3].strip()
+  d2[cols[3]] = d2[cols[3]] + 1
+  cols[4] = cols[4].strip()
+  d3[cols[4]] = d3[cols[4]] + 1
+
+keys = range(5)
+plt.bar(keys,d1.values(),color='r')
+plt.show()
+plt.bar(keys,d2.values(),color='g')
+plt.show()
+plt.bar(keys,d3.values(),color='b')
+plt.show()
